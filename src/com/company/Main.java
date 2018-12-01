@@ -17,11 +17,11 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        while (indexForFibbonaci<0){
+        while (indexForFibbonaci < 0) {
             try {
                 System.out.println("Which fibonacci number you want?");
                 indexForFibbonaci = scanner.nextInt();
-            } catch (InputMismatchException ex){
+            } catch (InputMismatchException ex) {
                 System.out.println("You cannot enter String!");
                 scanner.next();
             }
@@ -45,20 +45,15 @@ public class Main {
     }
 
     private static void numberEqualsTo(int howManyNumbers) {
-        switch (howManyNumbers) {
-            case 1:
-                System.out.println("\n" + howManyNumbers + "st Fibonacci number equals to:");
-                break;
-            case 2:
-                System.out.println("\n" + howManyNumbers + "nd Fibonacci number equals to:");
-                break;
-            case 3:
-                System.out.println("\n" + howManyNumbers + "rd Fibonacci number equals to:");
-                break;
-            default:
-                System.out.println("\n" + howManyNumbers + "th Fibonacci number equals to:");
-                break;
-        }
+        if ((howManyNumbers % 10) == 1 && (howManyNumbers != 11)) {
+            System.out.println("\n" + howManyNumbers + "st Fibonacci number equals to:");
+        } else if ((howManyNumbers % 10) == 2 && (howManyNumbers != 12)) {
+            System.out.println("\n" + howManyNumbers + "nd Fibonacci number equals to:");
+        } else if ((howManyNumbers % 10 == 3) && (howManyNumbers != 13)) {
+            System.out.println("\n" + howManyNumbers + "rd Fibonacci number equals to:");
+        } else
+            System.out.println("\n" + howManyNumbers + "th Fibonacci number equals to:");
+
         System.out.println(firstNumber);
     }
 
